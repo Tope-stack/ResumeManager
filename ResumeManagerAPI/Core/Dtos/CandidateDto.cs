@@ -28,7 +28,6 @@ namespace ResumeManagerAPI.Core.Dtos
         public string Phone { get; set; }
         public string CoverLetter { get; set; }
         public string ResumeUrl { get; set; }
-        public long JobId { get; set; }
     }
 
     public class CreateCandidateDto : CreateUpdateCandidateDto

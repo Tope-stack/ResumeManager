@@ -37,7 +37,7 @@ namespace ResumeManagerAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCompany()
+        public async Task<IActionResult> GetCompanies()
         {
             var companies = await _service.Company.GetAllCompanies(trackChanges: false);
             var companyDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);

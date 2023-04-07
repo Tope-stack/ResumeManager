@@ -14,17 +14,17 @@ namespace ResumeManagerAPI.Services.Service
         {
 
         }
-        public async Task CreateCandidate(Candidate candidate) =>
+        public async Task CreateCandidate(Candidate candidate, IFormFile pdfFile) =>
             await CreateAsync(candidate);
 
 
-        //public Task DownloadPdfFile(string url)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public Task DownloadPdfFile(string url)
+        {
+            throw new NotImplementedException();
+        }
 
-        public async Task GetCandidate(long candidateId, bool trackChanges) =>
-            await FindByConditionAsync(c => c.ID.Equals(candidateId), trackChanges).Result.SingleOrDefaultAsync();
+        public async Task<IEnumerable<Candidate>> GetCandidate(bool trackChanges) =>
+            await FindAllAsync(trackChanges).Result.OrderBy(c => c.CreatedAt).ToListAsync();
         
     }
 }

@@ -5,9 +5,9 @@ namespace ResumeManagerAPI.Services.Interface
 {
     public interface ICandidateService
     {
-        Task CreateCandidate(Candidate candidate);
-        Task GetCandidate(long candidateId, bool trackChanges);
-        //Task DownloadPdfFile(string url);
+        Task CreateCandidate(Candidate candidate, IFormFile pdfFile);
+        Task<IEnumerable<Candidate>> GetCandidate(bool trackChanges);
+        Task DownloadPdfFile(string url);
 
     }
 }

@@ -23,9 +23,8 @@ namespace ResumeManagerAPI.Extensions
         {
             var mapperConfig = new MapperConfiguration(map =>
             {
-                map.AddProfile<CompanyMappingProfile>();
-                map.AddProfile<JobMappingProfile>();
-                map.AddProfile<CandidateMappinProfile>();
+                map.AddProfile<MappingConfig>();
+                
             });
 
             services.AddSingleton(mapperConfig.CreateMapper());
