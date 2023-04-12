@@ -14,9 +14,13 @@ namespace ResumeManagerAPI.Services.Service
         }
         public async Task CreateJob(Job job) => await CreateAsync(job);
 
+        public async Task DeleteJob(Job job) => await RemoveAsync(job);
+        
 
         public async Task<IEnumerable<Job>> GetAllJobs(bool trackChanges) =>
             await FindAllAsync(trackChanges).Result.OrderBy(c => c.CreatedAt).ToListAsync();
+
+
        
     }
 }

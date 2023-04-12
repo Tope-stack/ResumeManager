@@ -47,5 +47,13 @@ namespace ResumeManagerAPI.Extensions
         //    });
         //    services.AddMvc().AddJsonOptions(configureJson);
         //}
+
+        public static void ConfigureJsonOptions(this IServiceCollection services)
+        {
+            services.AddControllers().AddJsonOptions(opts =>
+            {
+                opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
+        }
     }
 }

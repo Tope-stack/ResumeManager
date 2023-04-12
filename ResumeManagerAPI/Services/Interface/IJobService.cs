@@ -6,5 +6,6 @@ namespace ResumeManagerAPI.Services.Interface
     {
         Task CreateJob(Job job);
         Task<IEnumerable<Job>> GetAllJobs(bool trackChanges);
+        Task DeleteJob(Job job);
     }
 }

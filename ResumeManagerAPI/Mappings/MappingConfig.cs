@@ -21,7 +21,7 @@ namespace ResumeManagerAPI.Mappings
             CreateMap<Company, GetCompanyDto>();
 
             // Job Mapping
-            CreateMap<Job, JobDto>();
+            CreateMap<Job, JobDto>().ReverseMap();
             CreateMap<CreateJobDto, Job>();
             CreateMap<Job, GetJobDto>()
                 .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.Name));

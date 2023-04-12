@@ -23,5 +23,7 @@ namespace ResumeManagerAPI.Services.Service
         public async Task<IEnumerable<Company>> GetAllCompanies(bool trackChanges) =>
             await FindAllAsync(trackChanges).Result.OrderBy(c => c.Name).ToListAsync();
 
+        
+
     }
 }

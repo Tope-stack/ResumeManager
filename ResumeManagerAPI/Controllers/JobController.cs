@@ -35,5 +35,15 @@ namespace ResumeManagerAPI.Controllers
             var jobDto = _mapper.Map<IEnumerable<JobDto>>(jobs);
             return Ok(jobDto);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(JobDto job)
+        {
+            var jobData = _mapper.Map<Job>(job);
+            await _service.Job.DeleteJob(jobData);
+            await _service.SaveAsync();
+
+            return Ok("Job is successfully deleted");
+        }
     }
 }
